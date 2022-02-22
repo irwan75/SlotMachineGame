@@ -46,8 +46,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 136,
-      "height": 428
+      "width": 250,
+      "height": 718
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -178,7 +178,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "8978a49f-885d-49c4-b1ba-9ef150a5af7b"
+      "__id__": 0
     },
     "fileId": "0290BplSBBT64cs7Tg78Vl",
     "sync": false
@@ -226,8 +226,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 136,
-      "height": 712
+      "width": 250,
+      "height": 1250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -297,8 +297,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 136,
-      "height": 136
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -310,7 +310,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        288,
+        500,
         0,
         0,
         0,
@@ -361,8 +361,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 237,
-      "height": 237
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -545,8 +545,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 136,
-      "height": 136
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -558,7 +558,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        144,
+        250,
         0,
         0,
         0,
@@ -609,8 +609,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 237,
-      "height": 237
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -793,8 +793,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 136,
-      "height": 136
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -857,8 +857,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 237,
-      "height": 237
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1041,8 +1041,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 136,
-      "height": 136
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1054,7 +1054,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -144,
+        -250,
         0,
         0,
         0,
@@ -1105,8 +1105,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 237,
-      "height": 237
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1289,8 +1289,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 136,
-      "height": 136
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1302,7 +1302,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -288,
+        -500,
         0,
         0,
         0,
@@ -1353,8 +1353,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 237,
-      "height": 237
+      "width": 250,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1513,8 +1513,8 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 300,
-      "height": 424
+      "width": 250,
+      "height": 1250
     },
     "_resize": 1,
     "_N$layoutType": 3,
@@ -1529,7 +1529,7 @@
     "_N$paddingTop": 0,
     "_N$paddingBottom": 0,
     "_N$spacingX": 0,
-    "_N$spacingY": 8,
+    "_N$spacingY": 0,
     "_N$verticalDirection": 1,
     "_N$horizontalDirection": 0,
     "_N$affectedByScale": false,
@@ -1541,7 +1541,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "8978a49f-885d-49c4-b1ba-9ef150a5af7b"
+      "__id__": 0
     },
     "fileId": "0awxAchelO3JK8UVLbIIby",
     "sync": false
@@ -1580,6 +1580,8 @@
     "reelAnchor": {
       "__id__": 5
     },
+    "cordinatSpaceTilePos": 250,
+    "cordinatSpaceTileMin": -250,
     "tiles": [
       {
         "__id__": 6
@@ -1608,7 +1610,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "8978a49f-885d-49c4-b1ba-9ef150a5af7b"
+      "__id__": 0
     },
     "fileId": "",
     "sync": false

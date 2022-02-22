@@ -9,6 +9,10 @@ export default class ReelControl extends cc.Component {
 
     @property({ type: cc.Node })
     public reelAnchor = null;
+    @property({type: Number})
+    cordinatSpaceTilePos = 136;
+    @property({type: Number})
+    cordinatSpaceTileMin = -136;
 
     // Tiles
     @property({ type: [cc.Node], visible: false })
@@ -93,7 +97,7 @@ export default class ReelControl extends cc.Component {
   
       this.reelAnchor.children.forEach(element => {   
         const delay = cc.tween(element).delay(windUp);
-        const start = cc.tween(element).by(0.25, { position: cc.v2(0, 144 * -1) }, { easing: 'backIn' });
+        const start = cc.tween(element).by(0.25, { position: cc.v2(0, this.cordinatSpaceTilePos * -1) }, { easing: 'backIn' });
         const doChange = cc.tween().call(() => this.changeCallback(element));
         const callSpinning = cc.tween(element).call(() => this.doSpinning(element, 5));
         
@@ -111,7 +115,7 @@ export default class ReelControl extends cc.Component {
       // Sound
       this.audioSourceControl.playSound(SoundType.E_Sound_Reel_Spin);
       
-      const move = cc.tween().by(0.04, { position: cc.v2(0, -144) });
+      const move = cc.tween().by(0.04, { position: cc.v2(0, this.cordinatSpaceTileMin) });
       const doChange = cc.tween().call(() => this.changeCallback(element));
       const repeat = cc.tween(element).repeat(times, move.then(doChange));
       const checkEnd = cc.tween().call(() => this.checkEndCallback(element));
@@ -124,9 +128,9 @@ export default class ReelControl extends cc.Component {
       // Sound
       this.audioSourceControl.playSound(SoundType.E_Sound_Reel_Stop);
 
-      const move = cc.tween(element).by(0.04, { position: cc.v2(0, -144) } as any);
+      const move = cc.tween(element).by(0.04, { position: cc.v2(0, this.cordinatSpaceTileMin) } as any);
       const doChange = cc.tween().call(() => this.changeCallback(element));
-      const end = cc.tween().by(0.2, { position: cc.v2(0, -144) }, { easing: 'bounceOut' });
+      const end = cc.tween().by(0.2, { position: cc.v2(0, this.cordinatSpaceTileMin) }, { easing: 'bounceOut' });
       
       move
         .then(doChange)
