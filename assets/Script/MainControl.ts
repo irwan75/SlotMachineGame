@@ -23,18 +23,21 @@ export default class MainControl extends cc.Component {
     private probability = [50, 33, 10, 7]
 
     start(): void {
+        console.log("get start");
         // Set up Armed bandit
         this.bandit.getComponent('BanditControl').createBandit();
     }
 
     update(): void {
+        console.log("get update");
         if (this.block && this.result != null) {
             this.informStop();
             this.result = null;
         }
     }
 
-    click(): void {
+    clickStart(): void {
+        console.log("click start");
         // Sound
         this.audioSourceControl.playSound(SoundType.E_Sound_Mouse_Click);
     
@@ -42,18 +45,26 @@ export default class MainControl extends cc.Component {
           this.block = false;
           this.bandit.getComponent('BanditControl').spin();
           this.requestResult()
-        } else if (!this.block) {
+        }
+        
+    }
+
+    clickStop():void{
+        console.log("click stop");
+        if (!this.block) {
           this.block = true;
           this.bandit.getComponent('BanditControl').lock();
         }
     }
 
     async requestResult(): Promise<void> {
+        console.log("click request result");
         this.result = null;
         this.result = await this.getAnswer();
     }
 
     getAnswer(): Promise<Array<Array<number>>> {
+        console.log("get answer");
         let slotResult: Array<Array<number>> = [];
         return new Promise<Array<Array<number>>>(resolve => {
           setTimeout(() => {
@@ -71,12 +82,14 @@ export default class MainControl extends cc.Component {
     }
     
     getRandomEqualLines(linesCount: number, lineSize: number): Array<number>{
+        console.log("get random equalines");
         let equalLines = Array(lineSize).fill(0).map((v,i)=>i);
         equalLines = this.shuffleArray(equalLines);
         return equalLines.slice(0, linesCount);
     }
     
     getResultWithEqualLines(equalLines: Array<number>, machineSize: cc.Vec2): Array<Array<number>> {
+        console.log("get result with equalines");
         if(equalLines.length == 0){
           return [];
         }
@@ -104,6 +117,7 @@ export default class MainControl extends cc.Component {
     }
     
     getRandomPattern(): number{
+        console.log("get random pattern");
         let occurrence = 0;
         let random = this.getRandomInt(0, 99);
         for (let index = 3; index >=0; index--) {

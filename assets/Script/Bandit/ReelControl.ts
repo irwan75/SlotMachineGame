@@ -72,6 +72,7 @@ export default class ReelControl extends cc.Component {
   
         if (pop != null && pop >= 0) {
           el.getComponent('TileControl').setTile(pop);
+          console.log("this component");
           el.getComponent('TileControl').activateGlow(true);
         } else {
           el.getComponent('TileControl').setRandom();
@@ -142,6 +143,7 @@ export default class ReelControl extends cc.Component {
     }
 
     activateGlow(option: boolean): void {
+      console.log("active glow reel");
       this.reelAnchor.children.forEach(element => {
         element.getComponent('TileControl').activateGlow(option);
       });

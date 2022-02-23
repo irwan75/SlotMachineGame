@@ -4,7 +4,11 @@ const {ccclass, property} = cc._decorator;
 export default class BanditControl extends cc.Component {
     // Start/Stop Button
     @property(cc.Node)
-    public button: cc.Node = null;
+    public startButton: cc.Node = null;
+    @property(cc.Node)
+    public stopButton: cc.Node = null;
+
+    
 
     // Reel Prefab
     @property(cc.Prefab)
@@ -44,6 +48,8 @@ export default class BanditControl extends cc.Component {
 
     // Create the Armed bandit. Reset Reels and set Tiles at random
     createBandit(): void {
+        console.log("create bandit");
+
         this.node.destroyAllChildren();
         this.reels = [];
 
@@ -64,9 +70,11 @@ export default class BanditControl extends cc.Component {
 
     // Spin the Bandit Reels
     spin(): void {
+        console.log("spin");
         this.spinning = true;
         // Set button text to Stop
-        this.button.getChildByName('Label').getComponent(cc.Label).string = 'STOP';
+        this.startButton.active = false;
+
         for (let i = 0; i < this.numberOfReels; i += 1) {
             const theReel = this.reels[i].getComponent('ReelControl');
             // Spin the reel with delay
@@ -75,14 +83,16 @@ export default class BanditControl extends cc.Component {
     }
     
     lock(): void {
-        this.button.getComponent(cc.Button).interactable = false;
+        console.log("lock");
+        this.stopButton.getComponent(cc.Button).interactable = false;
     }
     
     stop(result: Array<Array<number>> = null): void {
+        console.log("stop");
         setTimeout(() => {
             this.spinning = false;
-            this.button.getComponent(cc.Button).interactable = true;
-            this.button.getChildByName('Label').getComponent(cc.Label).string = 'SPIN';
+            this.stopButton.getComponent(cc.Button).interactable = true;
+            this.startButton.active = true;
         }, 2500);
 
         const rngMod = Math.random() / 2;
@@ -95,6 +105,7 @@ export default class BanditControl extends cc.Component {
     }
 
     private stopReel(theReel: any, result: number[], spinDelay: number): Promise<void> {
+        console.log("stop reel");
         if(result){
             var res = result.slice();
         }
@@ -110,7 +121,10 @@ export default class BanditControl extends cc.Component {
     }
 
     activateGlow(option: boolean): void {
+        console.log("active glow");
         for (let i = 0; i < this.numberOfReels; i += 1) {
+            console.log(this.reels[i].toString);
+            console.log("active glow condition");
             this.reels[i].getComponent('ReelControl').activateGlow(option);
         }
     }

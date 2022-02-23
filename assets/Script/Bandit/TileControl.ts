@@ -45,6 +45,7 @@ export default class TileControl extends cc.Component {
 
     // Show glow underneath
     activateGlow(option: boolean) {
+        console.log("active glow tile");
         this.glowNode.active = option;
     }
 }
